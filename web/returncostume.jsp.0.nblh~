@@ -1,0 +1,134 @@
+<%-- 
+    Document   : returncostume
+    Created on : 28 Oct, 2022, 6:16:11 PM
+    Author     : hp
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+        <style>
+            .special{
+                height: 50px;
+                width:500px;
+                font-size: 28px;
+                background-color: pink;
+                color: black;
+                font-weight: bold;
+            }
+            .special input{
+                height: 40px;
+                width: 310px;
+                font-size: 24px;
+            }
+        </style>
+    </head>
+    <body>
+    
+    </body>
+</html>
+<%@page contentType="text/html" import="java.sql.*" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+        <script>
+            function funct()
+            {
+                var id = document.form1.input.value;
+                window.location.replace("returncostume.jsp?email="+id);
+            }
+        </script>
+    </head>
+    <body>
+        <form name="form1" method="post" action="returncostume.jsp">
+        <center><table border="1px solid black" class="special">
+            <tr>
+                <td>Enter Email : </td>
+                <td><input type="text" name="email" placeholder="Enter email" required onchange="funct(this.value)"></td>
+                <td><input type="submit" value="submit"></td>
+            </tr>
+        </table></center>
+        </form>
+        <%
+            String ccd="";
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/DRS", "root", "");
+            Statement st1 = con1.createStatement();
+            String a = "";
+            String b = "";
+            String c = "";
+            try{
+                String id = request.getParameter("email");
+                ccd=id;
+                ResultSet rst1 = st1.executeQuery("select * from staff where id='"+id+"'");
+                %>
+                
+                <section class="shopping-cart spad">
+                <div class="container">
+                    <%
+                while(rst1.next())
+                { %>
+                    <div class="row">
+                        <div class="col-lg-8">
+                        <div class="shopping__cart__table">  
+                        <form method="post" action="remove.jsp">
+                        <input type="hidden" name="pid" value="<%=rst1.getString("pid")%>">
+                        <input type="hidden" name="email" value="<%=id%>">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="product__cart__item">
+                                        <div class="product__cart__item__pic">
+                                            <img src="img/shopping-cart/cart-1.jpg" alt="">
+                                        </div>
+                                        <div class="product__cart__item__text">
+                                            <h6><%=rst1.getString("pname")%></h6>
+                                            <h5><%=rst1.getString("amount")%></h5>
+                                        </div>
+                                    </td>
+                                    <td class="quantity__item">
+                                        <div class="quantity">
+                                            <div class="pro-qty-2">
+                                                <input type="text" value="1">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="cart__price"><%=rst1.getString("price")%></td>
+                                    
+                                    <td class="cart__close"><input type="submit" value="Returned"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                    </div>
+                 </div>
+            </div>
+          <% } %>
+        </div>
+    </section>
+            <% }
+
+            catch(Exception e1)
+            {
+                e1.printStackTrace();
+            }
+        %>
+        
+                                              
+                                
+                
+    </body>
+</html>

@@ -1,0 +1,77 @@
+<%-- 
+    Document   : booking
+    Created on : 20 Oct, 2022, 8:20:04 PM
+    Author     : hp
+--%>
+
+<%@page import="java.io.InputStream"%>
+<%@page import="java.sql.*" import="javax.servlet.http.*"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <%
+            Connection connection = null;
+            String c = "jdbc:mysql://localhost:3306/DRS";
+            
+            String pid = request.getParameter("pid");
+            String pname = request.getParameter("name");
+            String category = request.getParameter("category");
+            String price = request.getParameter("price");
+            String fee = request.getParameter("fee");
+            String amount = request.getParameter("amount");
+            String status = "Confirmed";
+            String uname = (String)session.getAttribute("uname");
+            String email = (String)session.getAttribute("email");
+            String phone = (String)session.getAttribute("phone");
+            
+            try
+            {
+                Class.forName("com.mysql.jdbc.Driver");
+                connection = DriverManager.getConnection(c,"root", "");
+                InputStream inputStream = null;
+                    String sql = "Insert into order(user_name,email,p_id,p_name,category,price,fee,amount,status)"
+                            + "  values(?,?,?,?,?,?,?,?,?)";
+                    PreparedStatement p1 = connection.prepareStatement(sql);
+                    p1.setString(1, uname);
+                    p1.setString(2, email);
+                    p1.setString(3, pid);
+                    p1.setString(4, pname);
+                    p1.setString(5, category);
+                    p1.setString(6, price);
+                    p1.setString(7, fee);
+                    p1.setString(8, amount);
+                    p1.setString(9, status);
+                    
+                    int row = p1.executeUpdate();
+                    if(row>0)
+                    {
+                        %>
+                        <script>
+                            alert("Registration successfull");
+                            window.location.href="my_order.html";
+                        </script>
+                        <%
+                    }
+                    else{
+                        %>
+                        <script>
+                            alert("You! Already Registered");
+                            window.location.href="Register.html";
+                        </script>
+                   <% }
+            }
+            catch(SQLException q)
+            {
+                //q.printStackTrace();
+                out.print(q.toString());
+            }
+        %>
+    </body>
+</html>
+
+
