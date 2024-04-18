@@ -1,0 +1,217 @@
+body{
+    background-position: center;
+    background: url("bg2.jpg");
+    background-size: cover;
+
+    font-family: sans-serif;
+    margin-top: 40px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+
+}
+.regform{
+    width: 500px;
+    background-color: rgb(211,211,211);
+    margin-top: auto;
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+    border-radius: 15px 15px 0px;
+}
+.main{
+    background-color: rgb(47,79,79);
+    width: 500px;
+    margin: auto;
+
+}
+
+form{
+    padding: 10px;
+
+}
+
+
+
+.number{
+    margin-left: 25px;
+    margin-top: 30px;
+    width: 125px;
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+
+}
+.Number{
+    position: relative;
+    left: 200px;
+    top: -29px;
+    border-radius: 6px;
+    line-height: 20px;
+    padding: 0;
+    font-size: 16px;
+}
+.name{
+    margin-left: 25px;
+    margin-top: 20px;
+    width: 125px;
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+
+}
+.Name{
+    position: relative;
+    left: 200px;
+    top: -29px;
+    border-radius: 6px;
+    line-height: 30px;
+    padding: 0;
+    font-size: 16px;
+}
+.size{
+    margin-left: 25px;
+    margin-top: 30px;
+    width: 125px;
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+
+}
+.Size{
+    position: relative;
+    left: 200px;
+    top: -29px;
+    border-radius: 6px;
+    line-height: 30px;
+    padding: 0;
+    font-size: 16px;
+}
+.category{
+    margin-left: 25px;
+    margin-top: 30px;
+    width: 125px;
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+
+}
+.Category{
+    position: relative;
+    left: 200px;
+    top: -29px;
+    border-radius: 6px;
+    line-height: 30px;
+    padding: 0;
+    font-size: 16px;
+    width: 180px;
+}
+.class{
+    margin-left: 25px;
+    margin-top: 30px;
+    width: 125px;
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+
+}
+.Class{
+    position: relative;
+    left: 200px;
+    top: -29px;
+    border-radius: 6px;
+    line-height: 30px;
+    padding: 0;
+    font-size: 16px;
+    width: 180px;
+}
+.items{
+    margin-left: 25px;
+    margin-top: 30px;
+    width: 125px;
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+    
+
+}
+.Items{
+    position: relative;
+    left: 200px;
+    top: -29px;
+    border-radius: 6px;
+    line-height: 30px;
+    padding: 0;
+    font-size: 16px;
+}
+.price{
+    margin-left: 25px;
+    margin-top: 30px;
+    width: 125px;
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+
+}
+.Price{
+    position: relative;
+    left: 200px;
+    top: -29px;
+    border-radius: 6px;
+    line-height: 30px;
+    padding: 0;
+    font-size: 16px;
+}
+.fees{
+    margin-left: 25px;
+    margin-top: 30px;
+    width: 125px;
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+
+}
+.Fees{
+    position: relative;
+    left: 200px;
+    top: -29px;
+    border-radius: 6px;
+    line-height: 30px;
+    padding: 0;
+    font-size: 16px;
+}
+.amount{
+    margin-left: 25px;
+    margin-top: 30px;
+    width: 125px;
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+
+}
+.Amount{
+    position: relative;
+    left: 200px;
+    top: -29px;
+    border-radius: 6px;
+    line-height: 30px;
+    padding: 0;
+    font-size: 16px;
+}
+.btn{
+    background-color: red;
+    border-radius: 2px;
+    display: block;
+    margin: 20px 0px 0px 20px;
+    color: white;
+    border: 2px solid;
+    padding: 8px 80px;
+    cursor:pointer;
+    font-size: 20px;
+    text-align: center;
+     
+}
+.btn:hover{
+    background-color: green;
+}
